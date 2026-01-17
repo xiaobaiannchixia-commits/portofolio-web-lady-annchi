@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Section Preview - Vintage Luxury Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #f5f1ed 0%, #fffff0 100%);
+            color: #2a2622;
+            padding: 3rem 2rem;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(42, 38, 34, 0.1);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #2a2622;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #8b7355;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+        
+        .preview-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(245, 241, 237, 0.5) 0%, rgba(232, 220, 200, 0.5) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2a2622;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.8rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* NEW PREMIUM STYLE */
+        .info-item {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255, 255, 240, 0.8) 0%, rgba(232, 220, 200, 0.6) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-top: 3px solid #d4af37;
+            border-radius: 2px;
+            text-align: center;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        
+        .info-item:hover {
+            border-top: 3px solid #d4af37;
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+            transform: translateY(-8px);
+            background: linear-gradient(135deg, rgba(255, 255, 240, 1) 0%, rgba(232, 220, 200, 0.8) 100%);
+        }
+        
+        .info-item:hover::before {
+            opacity: 1;
+        }
+        
+        .info-icon {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.9;
+            transition: all 0.4s ease;
+        }
+        
+        .info-item:hover .info-icon {
+            font-size: 3rem;
+            opacity: 1;
+            animation: float 0.6s ease;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #2a2622;
+            margin: 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+        
+        .info-link {
+            display: inline-block;
+            font-size: 1.05rem;
+            color: #2a2622;
+            text-decoration: none;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 4px;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .info-link:hover {
+            color: #d4af37;
+            padding-bottom: 6px;
+        }
+        
+        .info-text {
+            font-size: 1.05rem;
+            color: #8b7355;
+            line-height: 1.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 115, 85, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #2a2622;
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: capitalize;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            position: relative;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+        }
+        
+        .social-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #d4af37 0%, rgba(212, 175, 55, 0.6) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 2px;
+        }
+        
+        .social-link:hover {
+            color: white;
+            border-color: #d4af37;
+        }
+        
+        .social-link:hover::after {
+            opacity: 1;
+        }
+        
+        .social-link:hover .link-arrow {
+            transform: translateX(4px);
+            color: white;
+        }
+        
+        .link-label {
+            display: inline-block;
+        }
+        
+        .link-arrow {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+            color: #d4af37;
+        }
+        
+        .feature-list {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .feature-list h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #8b7355;
+        }
+        
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .comparison-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+        }
+        
+        .comparison-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2a2622;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .comparison-item p {
+            color: #8b7355;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .before {
+            border-left: 3px solid #ccc;
+        }
+        
+        .after {
+            border-left: 3px solid #d4af37;
+        }
+        
+        code {
+            background: #2a2622;
+            color: #d4af37;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .note {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 115, 85, 0.05) 100%);
+            border-left: 4px solid #d4af37;
+            margin: 2rem 0;
+        }
+        
+        .note strong {
+            color: #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Contact Section - Premium Redesign</h1>
+        <div class="subtitle">Tampilan Baru yang Elegan, Mewah & Classic</div>
+        
+        <!-- Live Preview -->
+        <div class="preview-section">
+            <h2>👀 Live Preview - Hover untuk Lihat Effect</h2>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">✉</div>
+                    <h4 class="info-title">Email</h4>
+                    <a href="mailto:xiaobaiannchi.xia@gmail.com" class="info-link">xiaobaiannchi.xia@gmail.com</a>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">☎</div>
+                    <h4 class="info-title">Telepon</h4>
+                    <a href="tel:+62812772233" class="info-link">+62 812 772 233</a>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">◈</div>
+                    <h4 class="info-title">Lokasi</h4>
+                    <p class="info-text">Tangerang, Indonesia</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✦</div>
+                    <h4 class="info-title">Ikuti Saya</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" style="margin-bottom: 1rem;">
+                            <span class="link-label">LinkedIn</span>
+                            <span class="link-arrow">→</span>
+                        </a>
+                        <a href="https://instagram.com/xiaobai03" class="social-link" style="margin-bottom: 1rem;">
+                            <span class="link-label">Instagram</span>
+                            <span class="link-arrow">→</span>
+                        </a>
+                        <a href="#" class="social-link" style="margin-bottom: 1rem;">
+                            <span class="link-label">Twitter</span>
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="preview-section">
+            <h2>✨ Fitur Baru</h2>
+            <div class="feature-list">
+                <h3>Design Elements</h3>
+                <ul>
+                    <li><strong>Icons Elegan</strong> - ✉ ☎ ◈ ✦ dengan styling premium</li>
+                    <li><strong>Gradient Backgrounds</strong> - Subtle cream → beige transitions</li>
+                    <li><strong>Border Top Gold</strong> - 3px top border dengan elegant appearance</li>
+                    <li><strong>Bottom Line Accent</strong> - Muncul saat hover dengan smooth animation</li>
+                </ul>
+            </div>
+            
+            <div class="feature-list">
+                <h3>Interactive Effects</h3>
+                <ul>
+                    <li><strong>Hover Lift</strong> - Item naik dengan smooth translateY(-8px)</li>
+                    <li><strong>Glow Effect</strong> - Box shadow gold yang muncul saat hover</li>
+                    <li><strong>Icon Animation</strong> - Icons membesar (2.5rem → 3rem) dengan float</li>
+                    <li><strong>Social Link Glow</strong> - Background gradient emas muncul on hover</li>
+                    <li><strong>Arrow Animation</strong> - Panah bergerak ke kanan saat hover</li>
+                </ul>
+            </div>
+            
+            <div class="feature-list">
+                <h3>Functionality</h3>
+                <ul>
+                    <li><strong>Clickable Email</strong> - Langsung buka email client (mailto:)</li>
+                    <li><strong>Clickable Phone</strong> - Bisa klik untuk telepon (tel:)</li>
+                    <li><strong>Social Links</strong> - Links ke profile Instagram & social media</li>
+                    <li><strong>Responsive</strong> - 2 kolom desktop → 1 kolom mobile</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Comparison -->
+        <div class="preview-section">
+            <h2>🔄 Sebelum vs Sesudah</h2>
+            <div class="comparison">
+                <div class="comparison-item before">
+                    <h3>❌ Sebelum</h3>
+                    <p>✗ Latar belakang solid ivory</p>
+                    <p>✗ Border kiri tipis</p>
+                    <p>✗ Styling minimal</p>
+                    <p>✗ Hover effect terbatas</p>
+                    <p>✗ Icons tidak ada</p>
+                    <p>✗ Text biasa tanpa interaksi</p>
+                </div>
+                <div class="comparison-item after">
+                    <h3>✅ Sesudah</h3>
+                    <p>✓ Gradient backgrounds premium</p>
+                    <p>✓ Border top 3px emas</p>
+                    <p>✓ Multiple hover effects</p>
+                    <p>✓ Icons elegan & animasi</p>
+                    <p>✓ Clickable email & phone</p>
+                    <p>✓ Social links dengan arrow glow</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CSS Classes -->
+        <div class="preview-section">
+            <h2>🎨 CSS Classes Baru</h2>
+            <div style="margin: 1.5rem 0;">
+                <p><code>.info-icon</code> - Styling untuk icons (2.5rem → 3rem on hover)</p>
+                <p><code>.info-link</code> - Email & phone links dengan border-bottom animation</p>
+                <p><code>.social-link</code> - Social media buttons dengan gradient hover</p>
+                <p><code>.premium-link</code> - Extra styling dengan box-shadow</p>
+                <p><code>.link-label</code> - Text label inside links</p>
+                <p><code>.link-arrow</code> - Arrow indicator (→) dengan animation</p>
+            </div>
+        </div>
+        
+        <!-- Animations -->
+        <div class="preview-section">
+            <h2>🎬 Animations Detail</h2>
+            <div class="feature-list">
+                <h3>Info Item Hover Animations</h3>
+                <ul>
+                    <li><code>transform: translateY(-8px)</code> - Item naik</li>
+                    <li><code>box-shadow: 0 15px 40px rgba(212,175,55,0.2)</code> - Glow emas</li>
+                    <li><code>background: linear-gradient(...)</code> - Opacity berubah</li>
+                    <li><code>border-top: 3px solid #d4af37</code> - Border tetap gold</li>
+                    <li>Icons resize: 2.5rem → 3rem</li>
+                    <li>Bottom line gradient muncul (opacity 0 → 1)</li>
+                </ul>
+            </div>
+            
+            <div class="feature-list">
+                <h3>Social Link Hover Animations</h3>
+                <ul>
+                    <li>Background gradient: opacity 0 → 1 (400ms)</li>
+                    <li>Text color: dark brown → white</li>
+                    <li>Arrow: translateX(+4px) dengan smooth timing</li>
+                    <li>Border color berubah ke gold</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Responsive -->
+        <div class="preview-section">
+            <h2>📱 Responsive Breakpoints</h2>
+            <div class="feature-list">
+                <h3>Desktop (>1024px)</h3>
+                <ul>
+                    <li>Grid: 2 kolom</li>
+                    <li>Gap: 2rem (full spacing)</li>
+                    <li>All animations enabled</li>
+                </ul>
+            </div>
+            <div class="feature-list">
+                <h3>Tablet (768-1024px)</h3>
+                <ul>
+                    <li>Grid: 2 kolom (optimized)</li>
+                    <li>Gap: 1.5rem</li>
+                    <li>Padding adjusted</li>
+                </ul>
+            </div>
+            <div class="feature-list">
+                <h3>Mobile (<768px)</h3>
+                <ul>
+                    <li>Grid: 1 kolom penuh</li>
+                    <li>Gap: 1.5rem</li>
+                    <li>Padding: 1.5rem</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Notes -->
+        <div class="note">
+            <strong>💡 Pro Tip:</strong> Untuk customize lebih lanjut, edit values di CSS:
+            <ul style="margin-top: 1rem; margin-left: 2rem;">
+                <li>Icon size: Edit <code>font-size: 2.5rem</code> di <code>.info-icon</code></li>
+                <li>Hover distance: Edit <code>translateY(-8px)</code></li>
+                <li>Gold color: Edit <code>--color-gold: #d4af37</code> di <code>:root</code></li>
+                <li>Animation speed: Edit <code>0.6s</code> duration values</li>
+            </ul>
+        </div>
+        
+        <div class="note">
+            <strong>🚀 Next Steps:</strong>
+            <ol style="margin-top: 1rem; margin-left: 2rem;">
+                <li>Test hover effects di index.html</li>
+                <li>Check responsiveness di mobile</li>
+                <li>Update social links (LinkedIn & Twitter)</li>
+                <li>Customize icons atau colors jika perlu</li>
+                <li>Deploy dengan design baru yang premium!</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
